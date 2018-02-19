@@ -9,9 +9,10 @@
 
 ## Contains
 
-1.Http Interceptor to add the cookie
-2. Route Guards ? WIP
-
+<ul>
+<li>Http Interceptor to add the cookie
+<li> Route Guards ? WIP
+</ul
 ## Only Build Module
 Does not and will not contain any demo, so run only ```npm run build:demo```
 
