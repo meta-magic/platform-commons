@@ -7,8 +7,8 @@ import {Observable} from 'rxjs/Observable';
 import {CookieService} from "../cookie-service/cookie.service";
 
 
-const TOKENKEY = 'tokenid';
-const COOKIE_NAME = 'tokenid';
+export const TOKENKEY = 'tokenid';
+export const COOKIE_NAME = 'tokenid';
 
 @Injectable()
 export class NoopInterceptor implements HttpInterceptor {

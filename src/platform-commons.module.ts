@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {NoopInterceptor} from './http-interceptor/platform.http.interceptor';
 import {CookieService} from "./cookie-service/cookie.service";
+import {EncryptionService} from "./encryption-service/encryption.service";
+import {LocalStorageService} from "./local-storage-service/local.storage.service";
 
 
 @NgModule({
@@ -12,6 +14,8 @@ import {CookieService} from "./cookie-service/cookie.service";
   ],
   providers: [
     CookieService,
+    EncryptionService,
+    LocalStorageService,
     {
     provide: HTTP_INTERCEPTORS,
     useClass: NoopInterceptor,
@@ -24,6 +28,8 @@ export class PlatformCommmonsModule {
       ngModule: PlatformCommmonsModule,
       providers: [
         CookieService,
+        EncryptionService,
+        LocalStorageService,
         {
           provide: HTTP_INTERCEPTORS,
           useClass: NoopInterceptor,
@@ -33,3 +39,6 @@ export class PlatformCommmonsModule {
     };
   }
 }
+
+export * from './local-storage-service/local.storage.service';
+export * from './encryption-service/encryption.service';
