@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {NoopInterceptor} from './http-interceptor/platform.http.interceptor';
+import {CookieService} from "./cookie-service/cookie.service";
 
 
 @NgModule({
@@ -9,7 +10,9 @@ import {NoopInterceptor} from './http-interceptor/platform.http.interceptor';
     CommonModule,
     HttpClientModule
   ],
-  providers: [{
+  providers: [
+    CookieService,
+    {
     provide: HTTP_INTERCEPTORS,
     useClass: NoopInterceptor,
     multi: true,
@@ -20,6 +23,7 @@ export class PlatformCommmonsModule {
     return {
       ngModule: PlatformCommmonsModule,
       providers: [
+        CookieService,
         {
           provide: HTTP_INTERCEPTORS,
           useClass: NoopInterceptor,

@@ -122,7 +122,6 @@
     "@angular/forms": "^5.2.4",
     "@angular/http": "^5.2.4",
     "@angular/router": "^5.2.4",
-    "amexio-ng-extensions": "^4.0.7",
-    "ngx-cookie-service": "^1.0.10"
+    "amexio-ng-extensions": "^4.0.7"
   }
 }
