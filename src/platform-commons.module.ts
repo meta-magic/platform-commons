@@ -5,6 +5,7 @@ import {NoopInterceptor} from './http-interceptor/platform.http.interceptor';
 import {CookieService} from "./cookie-service/cookie.service";
 import {EncryptionService} from "./encryption-service/encryption.service";
 import {LocalStorageService} from "./local-storage-service/local.storage.service";
+import {UserAuthenticGuard} from "./route-guards/session.token.gaurd";
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {LocalStorageService} from "./local-storage-service/local.storage.service
     CookieService,
     EncryptionService,
     LocalStorageService,
+    UserAuthenticGuard,
     {
     provide: HTTP_INTERCEPTORS,
     useClass: NoopInterceptor,
@@ -30,6 +32,7 @@ export class PlatformCommmonsModule {
         CookieService,
         EncryptionService,
         LocalStorageService,
+        UserAuthenticGuard,
         {
           provide: HTTP_INTERCEPTORS,
           useClass: NoopInterceptor,
@@ -42,3 +45,4 @@ export class PlatformCommmonsModule {
 
 export * from './local-storage-service/local.storage.service';
 export * from './encryption-service/encryption.service';
+export * from './route-guards/session.token.gaurd';
