@@ -19,7 +19,7 @@ export class LocalStorageService {
     }
   }
 
-  get(key) : any{
+  get(key:any) : any{
     let data : any;
     if(key != null){
       let stringData = localStorage.getItem(key);
