@@ -47,3 +47,4 @@ export * from './local-storage-service/local.storage.service';
 export * from './encryption-service/encryption.service';
 export * from './route-guards/session.token.gaurd';
 export * from './cookie-service/cookie.service';
+export * from './module-comunicator/module.message.communicator';
