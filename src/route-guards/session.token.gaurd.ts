@@ -5,10 +5,11 @@ import { Injectable } from '@angular/core';
 import { CanActivate, CanLoad } from '@angular/router';
 import { CookieService } from '../cookie-service/cookie.service';
 import { COOKIE_NAME } from '../http-interceptor/platform.http.interceptor';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class UserAuthenticGuard implements CanLoad {
-  constructor(private cookieService: CookieService) {}
+  constructor(private cookieService: CookieService, private _route: Router) {}
 
   /*canActivate(){
    if(this.isLoggedIn())
@@ -22,7 +23,8 @@ export class UserAuthenticGuard implements CanLoad {
   canLoad() {
     if (this.isLoggedIn()) return true;
     else {
-      window.alert('Invalid user');
+      // window.alert('Invalid user');
+      this._route.navigate(['login']);
       return false;
     }
   }
