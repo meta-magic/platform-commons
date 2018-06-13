@@ -6,11 +6,11 @@ export class LoaderService {
 
   showLoader() {
     this.isLoading = true;
-    console.log('showLoader', this.isLoading);
+    // console.log('showLoader', this.isLoading);
   }
 
   hideLoader() {
     this.isLoading = false;
-    console.log('hideLoader', this.isLoading);
+    // console.log('hideLoader', this.isLoading);
   }
 }
