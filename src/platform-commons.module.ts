@@ -7,7 +7,7 @@ import { EncryptionService } from './encryption-service/encryption.service';
 import { LocalStorageService } from './local-storage-service/local.storage.service';
 import { UserAuthenticGuard } from './route-guards/session.token.gaurd';
 import { MessagingService } from './module-comunicator/module.message.communicator';
-
+import { LoaderService } from './loader-service/loader.service';
 @NgModule({
   imports: [CommonModule, HttpClientModule],
   providers: [
@@ -15,6 +15,7 @@ import { MessagingService } from './module-comunicator/module.message.communicat
     EncryptionService,
     MessagingService,
     LocalStorageService,
+    LoaderService,
     UserAuthenticGuard,
     {
       provide: HTTP_INTERCEPTORS,
@@ -31,6 +32,7 @@ export class PlatformCommmonsModule {
         CookieService,
         EncryptionService,
         MessagingService,
+        LoaderService,
         LocalStorageService,
         UserAuthenticGuard,
         {
@@ -47,4 +49,5 @@ export * from './local-storage-service/local.storage.service';
 export * from './encryption-service/encryption.service';
 export * from './route-guards/session.token.gaurd';
 export * from './cookie-service/cookie.service';
+export * from './loader-service/loader.service';
 export * from './module-comunicator/module.message.communicator';
