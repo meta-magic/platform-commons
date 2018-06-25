@@ -15,31 +15,29 @@ export class NotificationService implements OnInit {
   title: string;
 
   // Attribute for Custom Notification
-  notificationData: any[] = [];
+  // notificationData: any[] = [];
   notificationTitle: string;
 
   showNotification = false;
+
+  //Attribut for notification
+  notificationType: string;
+  notificationData: any[] = [];
+  notificationColor: string;
   ngOnInit() {}
   constructor() {}
-  setDialogueData(show: boolean, message: string, title: string) {
-    this.showDialogue = show;
-    this.title = title;
-    this.dialogueMessage = message;
-  }
 
-  setCustomDialogueData(show: boolean, data: any, title: string) {
-    this.showCustomDialogue = show;
-    this.errorMsgData = data;
-    this.title = title;
-  }
-
-  setCustomNotificationData(title: string, data: any) {
-    this.notificationTitle = title;
+  setNotificationData(type: string, data: any) {
+    this.notificationType = type;
     this.notificationData = data;
   }
-
-  setNotificationData(show: boolean, data: any) {
-    this.showNotification = show;
+  showSuccessData(data: any) {
+    this.notificationData = data;
+  }
+  showWarningData(type: string, data: any) {
+    this.notificationData = data;
+  }
+  showInfoData(type: string, data: any) {
     this.notificationData = data;
   }
 }
