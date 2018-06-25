@@ -8,6 +8,8 @@ import { LocalStorageService } from './local-storage-service/local.storage.servi
 import { UserAuthenticGuard } from './route-guards/session.token.gaurd';
 import { MessagingService } from './module-comunicator/module.message.communicator';
 import { LoaderService } from './loader-service/loader.service';
+import { NotificationService } from './notification-service/notification.service';
+import { NotificationComponent } from './notification-service/notification.component';
 @NgModule({
   imports: [CommonModule, HttpClientModule],
   providers: [
@@ -17,12 +19,14 @@ import { LoaderService } from './loader-service/loader.service';
     LocalStorageService,
     LoaderService,
     UserAuthenticGuard,
+    NotificationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: NoopInterceptor,
       multi: true
     }
-  ]
+  ],
+  declarations: [NotificationComponent]
 })
 export class PlatformCommmonsModule {
   static forRoot(): ModuleWithProviders {
@@ -35,17 +39,21 @@ export class PlatformCommmonsModule {
         LoaderService,
         LocalStorageService,
         UserAuthenticGuard,
+        NotificationService,
         {
           provide: HTTP_INTERCEPTORS,
           useClass: NoopInterceptor,
           multi: true
         }
-      ]
+      ],
+      declarations: [NotificationComponent]
     };
   }
 }
 
 export * from './local-storage-service/local.storage.service';
+export * from './notification-service/notification.component';
+export * from './notification-service/notification.service';
 export * from './encryption-service/encryption.service';
 export * from './route-guards/session.token.gaurd';
 export * from './cookie-service/cookie.service';
