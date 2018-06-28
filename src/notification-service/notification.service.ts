@@ -5,25 +5,23 @@ import { Injectable, OnInit } from '@angular/core';
 
 @Injectable()
 export class NotificationService implements OnInit {
-  // Attribute for Custom Dialogue box
-  showCustomDialogue: boolean = false;
-  showDialogue: boolean = false;
-  errorMsgData: any[];
-
-  // Attribute for Simple Dialogue box
-  dialogueMessage: string;
-  title: string;
-
-  // Attribute for Custom Notification
-  // notificationData: any[] = [];
-  notificationTitle: string;
-
-  showNotification = false;
-
   //Attribut for notification
   notificationType: string;
   notificationData: any[] = [];
   notificationColor: string;
+
+  //Attribut for error notification
+  title: string;
+  errorData: any[] = [];
+
+  //Attribut for success notification
+  successData: any[] = [];
+
+  //Attribut for success notification
+  warningData: any[] = [];
+
+  //Attribut for success notification
+  infoData: any[] = [];
   ngOnInit() {}
   constructor() {}
 
@@ -31,13 +29,27 @@ export class NotificationService implements OnInit {
     this.notificationType = type;
     this.notificationData = data;
   }
+
+  showerrorData(title: string, data: any) {
+    this.title = title;
+    this.errorData = data;
+    this.infoData = [];
+    this.warningData = [];
+    this.successData = [];
+  }
   showSuccessData(data: any) {
-    this.notificationData = data;
+    this.infoData = [];
+    this.warningData = [];
+    this.successData = data;
   }
-  showWarningData(type: string, data: any) {
-    this.notificationData = data;
+  showWarningData(data: any) {
+    this.successData = [];
+    this.infoData = [];
+    this.warningData = data;
   }
-  showInfoData(type: string, data: any) {
-    this.notificationData = data;
+  showInfoData(data: any) {
+    this.successData = [];
+    this.warningData = [];
+    this.infoData = data;
   }
 }
