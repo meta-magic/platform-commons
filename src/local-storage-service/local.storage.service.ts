@@ -11,10 +11,11 @@ export class LocalStorageService {
   set(key: any, value: any) {
     if (key != null) {
       //Encrypt before storing
-      localStorage.setItem(
-        key,
-        value === undefined ? null : this.encryptionService.encryptObject(value)
-      );
+      // localStorage.setItem(
+      //   key,
+      //   value === undefined ? null : this.encryptionService.encryptObject(value)
+      // );
+      localStorage.setItem(key, JSON.stringify(value));
     } else {
       console.warn('Local Storage Service : Key cannot be empty');
     }
@@ -23,16 +24,17 @@ export class LocalStorageService {
   get(key: any): any {
     let data: any;
     if (key != null) {
-      let stringData = localStorage.getItem(key);
+      let stringData: any = localStorage.getItem(key);
+      data = JSON.parse(stringData);
       //remove from local storage
       // localStorage.removeItem(key);
-      if (stringData != null) {
-        data = this.encryptionService.decryptObject(stringData);
-      } else {
-        console.warn('No Item found in local storage');
-      }
-    } else {
-      console.warn('Local Storage Service : Key cannot be empty');
+      //   if (stringData != null) {
+      //     data = this.encryptionService.decryptObject(stringData);
+      //   } else {
+      //     console.warn('No Item found in local storage');
+      //   }
+      // } else {
+      //   console.warn('Local Storage Service : Key cannot be empty');
     }
     return data;
   }
