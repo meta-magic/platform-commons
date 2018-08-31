@@ -38,4 +38,8 @@ export class LocalStorageService {
     }
     return data;
   }
+
+  remove(key: string) {
+    localStorage.removeItem(key);
+  }
 }
