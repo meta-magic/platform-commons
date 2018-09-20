@@ -16,7 +16,6 @@ export class CommonHttpInterceptor implements HttpInterceptor {
 
   }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('common interceptor');
     const changedReq = req.clone({headers : req.headers.set(TOKENKEY, this.getTokenCookieValue())});
     return next.handle(changedReq);
   }
