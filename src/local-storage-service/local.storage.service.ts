@@ -2,19 +2,13 @@
  * Created by pratik on 20/2/18.
  */
 import { Injectable } from '@angular/core';
-import { EncryptionService } from '../encryption-service/encryption.service';
 
 @Injectable()
 export class LocalStorageService {
-  constructor(private encryptionService: EncryptionService) {}
+  constructor() {}
 
   set(key: any, value: any) {
     if (key != null) {
-      //Encrypt before storing
-      // localStorage.setItem(
-      //   key,
-      //   value === undefined ? null : this.encryptionService.encryptObject(value)
-      // );
       localStorage.setItem(key, JSON.stringify(value));
     } else {
       console.warn('Local Storage Service : Key cannot be empty');
@@ -26,15 +20,6 @@ export class LocalStorageService {
     if (key != null) {
       let stringData: any = localStorage.getItem(key);
       data = JSON.parse(stringData);
-      //remove from local storage
-      // localStorage.removeItem(key);
-      //   if (stringData != null) {
-      //     data = this.encryptionService.decryptObject(stringData);
-      //   } else {
-      //     console.warn('No Item found in local storage');
-      //   }
-      // } else {
-      //   console.warn('Local Storage Service : Key cannot be empty');
     }
     return data;
   }

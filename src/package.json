@@ -1,0 +1,28 @@
+{
+  "name": "platform-commons",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/repo"
+  },
+  "author": {
+    "name": "ketan gote",
+    "email": "dattaram.gawas@metamagic.in"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/username/repo/issues"
+  },
+  "main": "platform-commons.umd.js",
+  "module": "platform-commons.js",
+  "jsnext:main": "platform-commons.js",
+  "typings": "platform-commons.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}

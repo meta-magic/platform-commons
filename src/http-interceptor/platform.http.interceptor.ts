@@ -11,11 +11,12 @@ export const TOKENKEY = 'tokenid';
 export const COOKIE_NAME = 'tokenid';
 
 @Injectable()
-export class NoopInterceptor implements HttpInterceptor {
+export class CommonHttpInterceptor implements HttpInterceptor {
   constructor(private cookieService : CookieService){
 
   }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log('common interceptor');
     const changedReq = req.clone({headers : req.headers.set(TOKENKEY, this.getTokenCookieValue())});
     return next.handle(changedReq);
   }

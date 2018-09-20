@@ -1,13 +1,7 @@
 {
-  "generator-angular-library": {
-    "githubUsername": "ketan-gote",
-    "githubRepoName": "projectmsui",
-    "npmModuleName": "projectmsui",
-    "ngModuleName": "ProjectMsUIModule",
-    "selectorPrefix": "project",
-    "projectTitle": "Project Microservice Ui",
-    "projectDescription": "Handles all Project Microservice UI",
-    "authorName": "Ketan Gote",
-    "packageManager": "npm"
+  "generator-angular2-library": {
+    "promptValues": {
+      "gitRepositoryUrl": "https://github.com/username/repo"
+    }
   }
 }
