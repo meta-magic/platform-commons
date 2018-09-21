@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/repo"
+    "url": "https://github.com/meta-magic/platform-commons"
   },
   "author": {
     "name": "ketan gote",
@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/username/repo/issues"
+    "url": "https://github.com/meta-magic/platform-commons/issues"
   },
   "main": "platform-commons.umd.js",
   "module": "platform-commons.js",
