@@ -19,7 +19,7 @@ import {NotificationService} from "../notification-service/notification.service"
         <amexio-box [box-width]="'350px'" >
           <amexio-image [icon-class]="_notificationService.icon" >
           </amexio-image> &nbsp;&nbsp;
-          <amexio-label size="small-bold" [badge]=7 font-color="black"> {{data}}</amexio-label>
+          <amexio-label size="small-bold"  font-color="black"> {{data}}</amexio-label>
         </amexio-box>
       </ng-template>
     </amexio-notification>
