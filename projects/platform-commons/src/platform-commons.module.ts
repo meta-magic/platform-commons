@@ -8,8 +8,8 @@ import {NotificationService} from './notification-service/notification.service';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CommonHttpInterceptor} from './http-interceptor/platform.http.interceptor';
 import {RestCallService} from './rest-call-service/restcall.service';
-import {CookieService} from "ngx-cookie-service";
-import {PlatformNotificationComponent} from "./platform-notification/platform.notification.component";
+import {CookieService} from 'ngx-cookie-service';
+import {PlatformNotificationComponent} from './platform-notification/platform.notification.component';
 
 @NgModule({
   imports: [
@@ -22,9 +22,15 @@ export class PlatformCommonsModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: PlatformCommonsModule,
-      providers: [CookieService, RestCallService, MessagingService, LoaderService, LocalStorageService, UserAuthenticGuard, NotificationService, {
-        provide: HTTP_INTERCEPTORS, useClass: CommonHttpInterceptor, multi: true
-      }]
+      providers: [
+        CookieService, RestCallService,
+        MessagingService, LoaderService,
+        LocalStorageService, UserAuthenticGuard,
+        NotificationService,
+        {
+          provide: HTTP_INTERCEPTORS, useClass: CommonHttpInterceptor, multi: true
+        }
+      ]
     };
   }
 }
